@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Resizer
+	</title>
+	<script src=
+"https://code.jquery.com/jquery-1.12.4.min.js">
+	</script>
+
+	<style>
+		#div1 {
+			height: 50px;
+			width: 300px;
+			border: 2px solid black;
+		}
+
+		h1 {
+			color: blue;
+		}
+		.box{
+			background: blue;
+			border: 1px solid #ccc;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<center>
+		<h1>Resizing</h1>
+
+
+		<div id="div1" class="box">
+			Hello
+		</div>
+
+		<br>
+		<form>
+			<input type="text" placeholder="Hight" class="H1">
+            <input type="text" placeholder="Width"  class="W1">
+			<button type="button" class="H2">
+				Set Height and Width
+			</button>
+
+
+		</form>
+
+		<p id="p1"></p>
+		<p id="p2"></p>
+        <p id="p3"></p>
+		<p id="p4"></p>
+
+
+	</center>
+
+	<script>
+		$(document).ready(function(){
+			$(".H2").click(function(){
+
+				var demo ="Previous-height: "+
+						$("#div1").height();
+						+ "px";
+				$("#p1").text(demo);
+
+				var newHeight = $(".H1").val();
+				$(".box").height(newHeight);
+
+				demo = "New-height: "+
+						$("#div1").height();
+						+ "px";
+				$("#p2").text(demo);
+
+				 var demo ="Previous-width : "+
+                           $("#div1").width();
+                           + "px";
+                $("#p3").text(demo);
+
+                var newWidth = $(".W1").val();
+                $(".box").width(newWidth);
+
+                demo = "New-width : "+
+                           $("#div1").width();
+                           + "px";
+                $("#p4").text(demo);
+
+			});
+		});
+	</script>
+
+</body>
+
+</html>
